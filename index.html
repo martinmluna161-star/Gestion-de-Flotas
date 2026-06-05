@@ -779,7 +779,7 @@ async function sheetFetch(params) {
 // Lee una hoja del Sheet público como CSV y la convierte a array de objetos
 async function readSheetCSV(sheetName, isHistory) {
   // URL pública de exportación CSV (requiere que el Sheet esté compartido como "Cualquiera con el link puede ver")
-  const url = \`https://docs.google.com/spreadsheets/d/\${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=\${encodeURIComponent(sheetName)}\`;
+  const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(sheetName)}`;
 
   const withTimeout = (p, ms) => Promise.race([
     p, new Promise((_,rej) => setTimeout(() => rej(new Error('timeout')), ms))
